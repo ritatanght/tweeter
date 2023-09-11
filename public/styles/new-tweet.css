@@ -1,0 +1,26 @@
+section.new-tweet form {
+  font-weight: 600;
+}
+
+section.new-tweet form textarea {
+  border: none;
+  border-bottom: 5px solid #545149;
+  resize: none;
+  background: inherit;
+  width: 100%;
+  margin-bottom: 0.5em;
+  font-weight: inherit;
+}
+
+section.new-tweet form div {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+}
+
+section.new-tweet form button {
+  background: #4056a1;
+  color: #fff;
+  border: none;
+  padding: 0 0.5em;
+}
