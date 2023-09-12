@@ -24,3 +24,7 @@ section.new-tweet form button {
   border: none;
   padding: 0 0.5em;
 }
+
+.invalid{
+  color:red;
+}
