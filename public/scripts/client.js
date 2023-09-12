@@ -77,9 +77,8 @@ const renderTweets = (tweets) => {
 
 // jQuery
 $(document).ready(() => {
-  renderTweets(data);
-
-  $("form").submit(function(event) {
+  // form data submission
+  $("form").submit(function (event) {
     event.preventDefault();
     const [key, val] = $(this).serialize().split("=");
     const data = { [key]: val };
@@ -88,4 +87,12 @@ $(document).ready(() => {
       console.log("Posted");
     });
   });
+
+  //use jQuery to make a request to /tweets and receive the array of tweets as JSON
+  const loadTweets = () => {
+    $.get("/tweets", (tweets) => {
+      renderTweets(tweets);
+    });
+  };
+  loadTweets();
 });
