@@ -61,7 +61,7 @@ const createTweetElement = (tweetObject) => {
 };
 
 /**
- * Takes in an array of tweet objects and append each one to the #tweets-container
+ * Takes in an array of tweet objects and append each one to the #tweets-container using jQuery
  * @param {array} tweets
  * @returns undefined
  */
@@ -75,6 +75,17 @@ const renderTweets = (tweets) => {
   }
 };
 
+// jQuery
 $(document).ready(() => {
   renderTweets(data);
+
+  $("form").submit(function(event) {
+    event.preventDefault();
+    const [key, val] = $(this).serialize().split("=");
+    const data = { [key]: val };
+
+    $.post("/tweets", data, () => {
+      console.log("Posted");
+    });
+  });
 });
