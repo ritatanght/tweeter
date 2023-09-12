@@ -1,4 +1,4 @@
-header {
+header.user {
   padding-top: 120px;
   height: calc(400px + 120px);
   display: flex;
