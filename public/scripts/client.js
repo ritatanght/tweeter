@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 /**
  * Takes a tweet object and generate a new HTML element
  * @param {object} tweetObject
@@ -45,18 +44,30 @@ const renderTweets = (tweets) => {
   for (const tweet of tweets) {
     // calls createTweetElement for each tweet
     const $tweet = createTweetElement(tweet);
-    // takes return value and appends it to the tweets container
-    $("#tweets-container").append($tweet);
+    // takes return value and prepend it to the tweets container to make it as the first child
+    $("#tweets-container").prepend($tweet);
   }
 };
 
 // jQuery
 $(document).ready(() => {
+  /**
+   * make a request to /tweets and receive the array of tweets as JSON
+   * call renderTweets to render the tweets to the DOM
+   */
+  const loadTweets = () => {
+    $.get("/tweets", (tweets) => renderTweets(tweets));
+  };
+
+  // load and render all tweets
+  loadTweets();
+
   // form data submission
-  $("form").submit(function(event) {
+  $("form").submit(function (event) {
     event.preventDefault();
     // Knowing that our form only has 1 text field, we can immediately extract the input
     let text = $(this).serialize().replace("text=", "");
+
     // decode the query string
     text = decodeURIComponent(text);
 
@@ -69,15 +80,12 @@ $(document).ready(() => {
     }
 
     $.post("/tweets", { text }, () => {
-      console.log("Posted");
+      // once the tweets is successfully posted, clear the textarea
+      $(this).find("textarea").val("");
+
+      // empty the tweets-container and call loadTweets to fetch the tweets again
+      $("#tweets-container").empty();
+      loadTweets();
     });
   });
-
-  //use jQuery to make a request to /tweets and receive the array of tweets as JSON
-  const loadTweets = () => {
-    $.get("/tweets", (tweets) => {
-      renderTweets(tweets);
-    });
-  };
-  loadTweets();
 });
