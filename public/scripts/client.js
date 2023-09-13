@@ -61,9 +61,9 @@ $(document).ready(() => {
 
   // load and render all tweets
   loadTweets();
-    
+
   // form data submission
-  $("form").submit(function(event) {
+  $("form").submit(function (event) {
     event.preventDefault();
     // move out the error message div before each submission
     const $errorDiv = $("#error");
@@ -77,17 +77,27 @@ $(document).ready(() => {
 
     // disallow tweet content to be empty or exceeds 140 characters, show corresponding error message
     if (!text) {
-      $errorDiv.slideDown("fast", function() {
+      $errorDiv.slideDown("fast", function () {
         $(this).children("p").text("Your tweet is empty.");
       });
       return;
     } else if (text.length > 140) {
-      $errorDiv.slideDown("fast", function() {
+      $errorDiv.slideDown("fast", function () {
         $(this)
           .children("p")
           .text("Too long! Please keep it under 140 characters.");
       });
       return;
     }
+
+    $.post("/tweets", { text }, () => {
+      // once the tweets is successfully posted, clear the textarea
+      $(this).find("textarea").val("");
+      // empty the tweets-container and call loadTweets to fetch the tweets again
+      $("#tweets-container").empty();
+      loadTweets();
+    });
   });
+
+  
 });
