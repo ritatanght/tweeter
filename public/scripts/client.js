@@ -63,20 +63,33 @@ $(document).ready(() => {
   loadTweets();
 
   // form data submission
-  $("form").submit(function (event) {
+  $("form").submit(function(event) {
     event.preventDefault();
+    // remove the error message div before each submission
+    const $errorDiv = $("#error");
+    $errorDiv.slideUp("fast", function() {
+      $(this).removeClass("show");
+    });
+
     // Knowing that our form only has 1 text field, we can immediately extract the input
     let text = $(this).serialize().replace("text=", "");
 
     // decode the query string
     text = decodeURIComponent(text);
 
-    // disallow tweet content to be empty or exceeds 140 characters.
+    // disallow tweet content to be empty or exceeds 140 characters, show corresponding error message
     if (!text) {
-      return alert("You cannot tweet empty content");
+      $errorDiv.slideDown("fast", function() {
+        $(this).children("p").text("Your tweet is empty.");
+      });
+      return;
     } else if (text.length > 140) {
-      console.log(text.length);
-      return alert("The tweet content is too long");
+      $errorDiv.slideDown("fast", function() {
+        $(this)
+          .children("p")
+          .text("Too long! Please keep it under 140 characters.");
+      });
+      return;
     }
 
     $.post("/tweets", { text }, () => {
