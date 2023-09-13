@@ -9,7 +9,12 @@ header.user {
   background-image: url(../images/old-map.png);
 }
 
-header h2 {
+header.user h2 {
   text-align: center;
   margin: 0;
+  color: #fff;
+}
+
+header.user h2 span {
+  font-weight: 300;
 }
