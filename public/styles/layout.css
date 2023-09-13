@@ -26,7 +26,6 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
 main {
   width: 90%;
   margin-inline: auto;
@@ -37,9 +36,6 @@ main {
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: none;
   color: #fff;
   background-color: #ff0000;
