@@ -11,26 +11,26 @@
  */
 const createTweetElement = (tweetObject) => {
   const { user, content, created_at } = tweetObject;
-  const $tweet = $(`<article class="tweet">
-  <header>
-            <div>
-              <img src="${user.avatars}" alt="avatar" />
-              <p>${user.name}</p>
-            </div>
-            <p class="handle">${user.handle}</p>
-          </header>
-          <p>
-            ${content.text}
-          </p>
-          <footer>
-            <p class="create-time">${timeago.format(created_at)}</p>
-            <div class="tweet-icons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-repeat"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
+  const $tweet = $(`
+  <article class="tweet">
+    <header>
+      <div>
+        <img src="${user.avatars}" alt="avatar" />
+        <p>${user.name}</p>
+      </div>
+      <p class="handle">${user.handle}</p>
+    </header>
+    <p class='content'></p>
+    <footer>
+      <p class="create-time">${timeago.format(created_at)}</p>
+      <div class="tweet-icons">
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-repeat"></i>
+        <i class="fa-solid fa-heart"></i>
+      </div>
+    </footer>
   </article>`);
+  $tweet.children(".content").text(content.text);
   return $tweet;
 };
 
