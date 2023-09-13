@@ -17,11 +17,12 @@ nav .bold {
   font-weight: 600;
 }
 
-nav button {
+.compose-btn {
   background: none;
   border: none;
   color: inherit;
   font-size: 1rem;
+  cursor: pointer;
 }
 nav p {
   margin-bottom: 0.25em;
