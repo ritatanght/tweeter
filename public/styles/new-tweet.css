@@ -25,6 +25,19 @@ section.new-tweet form button {
   padding: 0 0.5em;
 }
 
-.invalid{
-  color:red;
+.invalid {
+  color: red;
+}
+
+#error {
+  border: 3px solid red;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  gap: 0.5em;
+  display: none;
+}
+
+#error p {
+  margin: 0;
+  display: inline-block;
 }

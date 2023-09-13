@@ -49,7 +49,7 @@ const renderTweets = (tweets) => {
   }
 };
 
-// jQuery
+// jQuery document ready
 $(document).ready(() => {
   /**
    * make a request to /tweets and receive the array of tweets as JSON
@@ -61,15 +61,13 @@ $(document).ready(() => {
 
   // load and render all tweets
   loadTweets();
-
+    
   // form data submission
   $("form").submit(function(event) {
     event.preventDefault();
-    // remove the error message div before each submission
+    // move out the error message div before each submission
     const $errorDiv = $("#error");
-    $errorDiv.slideUp("fast", function() {
-      $(this).removeClass("show");
-    });
+    $errorDiv.slideUp("fast");
 
     // Knowing that our form only has 1 text field, we can immediately extract the input
     let text = $(this).serialize().replace("text=", "");
@@ -91,14 +89,5 @@ $(document).ready(() => {
       });
       return;
     }
-
-    $.post("/tweets", { text }, () => {
-      // once the tweets is successfully posted, clear the textarea
-      $(this).find("textarea").val("");
-
-      // empty the tweets-container and call loadTweets to fetch the tweets again
-      $("#tweets-container").empty();
-      loadTweets();
-    });
   });
 });
