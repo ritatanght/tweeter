@@ -1,3 +1,7 @@
+section.new-tweet {
+  display: none;
+}
+
 section.new-tweet form {
   font-weight: 600;
 }
