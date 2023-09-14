@@ -1,6 +1,8 @@
 @use "variables";
+
 nav {
   position: fixed;
+  top: 0;
   height: 120px;
   width: 100%;
   color: variables.$white-clr;
@@ -8,29 +10,26 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-nav span.logo {
-  font-family: variables.$logo-font;
-}
-
-nav .bold {
-  font-weight: 600;
-}
-
-.compose-btn {
-  background: none;
-  border: none;
-  color: inherit;
-  font-size: 1rem;
-  cursor: pointer;
-}
-.compose-btn p {
-  margin-bottom: 0.25em;
-}
-
-.compose-btn i {
-  color: variables.$warning-clr;
-  animation: animatedDown 2.5s ease-in-out infinite;
+  span.logo {
+    font-family: variables.$logo-font;
+  }
+  .bold {
+    font-weight: 600;
+  }
+  .compose-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    p {
+      margin-bottom: 0.25em;
+    }
+    i {
+      color: variables.$warning-clr;
+      animation: animatedDown 2.5s ease-in-out infinite;
+    }
+  }
 }
 
 @keyframes animatedDown {

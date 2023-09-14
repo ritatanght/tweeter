@@ -48,19 +48,20 @@ main {
   cursor: pointer;
   transition: all 0.3s ease-in;
   display: none;
-}
-.top-btn:hover {
-  background-color: variables.$shadow-clr;
-  color: variables.$warning-clr;
+
+  &:hover {
+    background-color: variables.$shadow-clr;
+    color: variables.$warning-clr;
+  }
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   body {
-    display: flex;
-    justify-content: space-evenly;
+    @include variables.flex(null, space-evenly, null);
   }
   main {
     margin-top: 150px;
-    margin-inline: 5%;
+    margin-inline: 1.5em;
+    flex-basis: 65%;
   }
 }

@@ -1,64 +1,56 @@
 @use "variables";
+
 article.tweet {
   border: 5px solid variables.$primary-text-clr;
   padding: 0.5em;
   transition: 0.3s box-shadow ease;
   margin-block: 1em;
+  &:hover {
+    box-shadow: 8px 8px variables.$shadow-clr;
+  }
+  img {
+    max-width: 50px;
+  }
+  header,
+  header div,
+  footer {
+    @include variables.flex(null, space-between, center);
+  }
+
+  .handle {
+    color: variables.$shadow-clr;
+    font-weight: 600;
+    margin-right: 0.5em;
+    word-wrap: break-word;
+  }
+
+  & > p {
+    font-weight: 600;
+    padding-inline: 1em;
+    word-wrap: break-word;
+  }
+
+  footer {
+    border-top: 5px solid variables.$primary-text-clr;
+    padding-inline: 1em;
+    font-weight: 600;
+    font-size: 0.9rem;
+    i {
+      color: variables.$secondary-clr;
+      cursor: pointer;
+      margin-left: 8px;
+      &:hover {
+        color: variables.$accent-clr;
+      }
+    }
+  }
+  p.create-time {
+    padding: 0;
+  }
 }
 
-article.tweet img {
-  max-width: 50px;
-}
-
-article.tweet:hover {
-  box-shadow: 8px 8px variables.$shadow-clr;
-}
-
-article.tweet header,
-article.tweet header div,
-article.tweet footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5em;
-}
-
-article.tweet .handle {
-  color: variables.$shadow-clr;
-  font-weight: 600;
-  margin-right: 0.5em;
-}
-
-article.tweet > p {
-  font-weight: 600;
-  padding-inline: 1em;
-  word-wrap: break-word;
-}
-
-article.tweet footer {
-  border-top: 5px solid variables.$primary-text-clr;
-  padding-inline: 1em;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-article.tweet p.create-time {
-  padding: 0;
-}
-
-article.tweet footer i {
-  color: variables.$secondary-clr;
-  cursor: pointer;
-  margin-left: 8px;
-}
-
-article.tweet footer i:hover {
-  color: variables.$accent-clr;
-}
-
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   article.tweet {
     margin-top: 0;
-    margin-bottom: 1em;
   }
 }

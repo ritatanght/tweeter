@@ -7,3 +7,10 @@ $accent-clr: #d99c23;
 $warning-clr: #ff0000;
 $shadow-clr: #c5cbe3;
 $white-clr: #fff;
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

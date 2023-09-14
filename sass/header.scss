@@ -1,31 +1,27 @@
-@use  "variables";
+@use "variables";
+
 header.user {
   padding-top: 120px;
   height: calc(400px + 120px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include variables.flex(column, center, center);
   background-color: variables.$accent-clr;
   background-image: url(../images/old-map.png);
+  h2 {
+    text-align: center;
+    margin: 0;
+    color: variables.$white-clr;
+    span {
+      font-weight: 300;
+    }
+  }
 }
 
-header.user h2 {
-  text-align: center;
-  margin: 0;
-  color: variables.$white-clr;
-}
-
-header.user h2 span {
-  font-weight: 300;
-}
-
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   header.user {
     margin-top: 150px;
-    margin-left: 5%;
     padding-top: 0;
+    margin-left: 1.5em;
     height: 400px;
-    flex-basis: 35%;
+    flex-basis: 30%;
   }
 }

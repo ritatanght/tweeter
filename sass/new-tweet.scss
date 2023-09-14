@@ -3,34 +3,30 @@
 section.new-tweet {
   display: none;
   margin-bottom: 1em;
-}
-
-section.new-tweet form {
-  font-weight: 600;
-}
-
-section.new-tweet form textarea {
-  border: none;
-  border-bottom: 5px solid variables.$primary-text-clr;
-  resize: none;
-  background: inherit;
-  width: 100%;
-  margin-bottom: 0.5em;
-  font-weight: inherit;
-  outline-color: variables.$shadow-clr;
-}
-
-section.new-tweet form div {
-  display: flex;
-  justify-content: space-between;
-  font-family: variables.$logo-font;
-}
-
-section.new-tweet form button {
-  background: variables.$secondary-clr;
-  color: variables.$white-clr;
-  border: none;
-  padding: 0 0.5em;
+  form {
+    font-weight: 600;
+    textarea {
+      border: none;
+      border-bottom: 5px solid variables.$primary-text-clr;
+      resize: none;
+      background: inherit;
+      width: 100%;
+      margin-bottom: 0.5em;
+      font-weight: inherit;
+      outline-color: variables.$shadow-clr;
+    }
+    div {
+      display: flex;
+      justify-content: space-between;
+      font-family: variables.$logo-font;
+    }
+    button {
+      background: variables.$secondary-clr;
+      color: variables.$white-clr;
+      border: none;
+      padding: 0 0.5em;
+    }
+  }
 }
 
 .invalid {
@@ -43,9 +39,8 @@ section.new-tweet form button {
   margin-bottom: 1em;
   gap: 0.5em;
   display: none;
-}
-
-#error p {
-  margin: 0;
-  display: inline-block;
+  p {
+    margin: 0;
+    display: inline-block;
+  }
 }
