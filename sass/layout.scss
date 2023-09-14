@@ -1,0 +1,66 @@
+@use "variables";
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  color: variables.$primary-text-clr;
+  background-color: variables.$primary-bg-clr;
+  font-size: 24px;
+  font-family: variables.$body-font;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+main {
+  width: 90%;
+  margin-inline: auto;
+  background-color: inherit;
+}
+
+.top-btn {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border: none;
+  color: variables.$white-clr;
+  background-color: variables.$warning-clr;
+  position: fixed;
+  padding: 10px;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  display: none;
+}
+.top-btn:hover {
+  background-color: variables.$shadow-clr;
+  color: variables.$warning-clr;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  main {
+    margin-top: 150px;
+    margin-inline: 5%;
+  }
+}
