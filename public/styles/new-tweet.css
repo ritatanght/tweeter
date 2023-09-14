@@ -15,6 +15,7 @@ section.new-tweet form textarea {
   width: 100%;
   margin-bottom: 0.5em;
   font-weight: inherit;
+  outline-color: #c5cbe3;
 }
 
 section.new-tweet form div {
