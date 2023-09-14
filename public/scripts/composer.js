@@ -4,7 +4,7 @@ $(document).ready(() => {
    *  focus on the textarea automatically upon the form slides down
    */
   $(".compose-btn").click(() => {
-    $(".new-tweet").slideToggle("fast", function () {
+    $(".new-tweet").slideToggle("fast", function() {
       $(this).find("#tweet-text").focus();
     });
   });
@@ -12,8 +12,9 @@ $(document).ready(() => {
   /**
    * (Stretch)
    * Make the 'Go To Top' button appear when the user starts to scroll and the nav button disappear
+   * The 'Go To Top' button would disappear when the screen is within 120px from the top
    */
-  $(window).on("scroll", function () {
+  $(window).on("scroll", function() {
     if ($(this).scrollTop() > 120) {
       $(".compose-btn").hide();
       $(".top-btn").show();
@@ -23,10 +24,10 @@ $(document).ready(() => {
     }
   });
 
-  // When clicked, the page should scroll to the top and the form should slide down with the textarea enabled.
+  // When clicked, the page should scroll to the top and the form should slide down with the textarea enabled
   $(".top-btn").click(() => {
     $(window).scrollTop(0);
-    $(".new-tweet").slideToggle("fast", function () {
+    $(".new-tweet").slideDown("fast", function() {
       $(this).find("#tweet-text").focus();
     });
   });

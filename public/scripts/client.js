@@ -77,12 +77,12 @@ $(document).ready(() => {
 
     // disallow tweet content to be empty or exceeds 140 characters, show corresponding error message
     if (!text) {
-      $errorDiv.slideDown("fast", function () {
+      $errorDiv.slideDown("fast", function() {
         $(this).children("p").text("Your tweet is empty.");
       });
       return;
     } else if (text.length > 140) {
-      $errorDiv.slideDown("fast", function () {
+      $errorDiv.slideDown("fast", function() {
         $(this)
           .children("p")
           .text("Too long! Please keep it under 140 characters.");
