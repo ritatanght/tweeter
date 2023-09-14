@@ -1,18 +1,29 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone that is built with HTML5, Sass, JS, jQuery and AJAX for the front-end and Node, Express for the back-end. This project has implemented additional features, including the ability to toggle the Compose Tweet box open or close using the compose button, and displaying a 'Go to Top' button when a user scrolls.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+## Final Product
 
-## Getting Started
+- Mobile Design
 
-1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
-2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+<img src="./docs/tweeter_mobile.png" width=48%/>
+<img src="./docs/tweeter_mobile2.png" width=48%/>
+
+<br/>
+
+- Desktop Design
+
+!["Desktop design"](./docs/tweeter_desktop.png)
+!["Desktop design with compose box open"](./docs/tweeter_desktop2.png)
 
 ## Dependencies
 
 - Express
-- Node 5.10.x or above
+- body-parser
+- chance
+
+## Getting Started
+
+1. Install dependencies using the `npm install` command.
+2. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+3. Go to <http://localhost:8080/> in your browser.
