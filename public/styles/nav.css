@@ -1,5 +1,6 @@
 nav {
   position: fixed;
+  top: 0;
   height: 120px;
   width: 100%;
   color: #fff;
@@ -11,37 +12,32 @@ nav {
 nav span.logo {
   font-family: "Bungee", cursive;
 }
-
 nav .bold {
   font-weight: 600;
 }
-
-.compose-btn {
+nav .compose-btn {
   background: none;
   border: none;
   color: inherit;
   font-size: 1rem;
   cursor: pointer;
 }
-.compose-btn p {
+nav .compose-btn p {
   margin-bottom: 0.25em;
 }
-
-.compose-btn i {
-  color: red;
+nav .compose-btn i {
+  color: #ff0000;
   animation: animatedDown 2.5s ease-in-out infinite;
 }
 
 @keyframes animatedDown {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(-5px);
   }
   50% {
     transform: translateY(5px);
   }
 }
-
 @media only screen and (min-width: 1024px) {
   nav {
     background-color: #4056a1;

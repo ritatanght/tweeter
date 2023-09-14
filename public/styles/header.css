@@ -1,6 +1,6 @@
 header.user {
   padding-top: 120px;
-  height: calc(400px + 120px);
+  height: 520px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,23 +8,21 @@ header.user {
   background-color: #d99c23;
   background-image: url(../images/old-map.png);
 }
-
 header.user h2 {
   text-align: center;
   margin: 0;
   color: #fff;
 }
-
 header.user h2 span {
   font-weight: 300;
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   header.user {
     margin-top: 150px;
-    margin-left: 5%;
     padding-top: 0;
+    margin-left: 1.5em;
     height: 400px;
-    flex-basis: 35%;
+    flex-basis: 30%;
   }
 }

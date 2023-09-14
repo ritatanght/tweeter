@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -15,7 +16,6 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -52,13 +52,14 @@ main {
   color: #ff0000;
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   body {
     display: flex;
     justify-content: space-evenly;
   }
   main {
     margin-top: 150px;
-    margin-inline: 5%;
+    margin-inline: 1.5em;
+    flex-basis: 65%;
   }
 }
