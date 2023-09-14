@@ -23,12 +23,23 @@ nav .bold {
   font-size: 1rem;
   cursor: pointer;
 }
-nav p {
+.compose-btn p {
   margin-bottom: 0.25em;
 }
 
-nav i {
+.compose-btn i {
   color: red;
+  animation: animatedDown 2.5s ease-in-out infinite;
+}
+
+@keyframes animatedDown {
+  0%,
+  100% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
 }
 
 @media only screen and (min-width: 1024px) {
