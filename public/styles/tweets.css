@@ -1,11 +1,8 @@
-section > article {
-  margin-block: 1em;
-}
-
 article.tweet {
   border: 5px solid #545149;
   padding: 0.5em;
   transition: 0.3s box-shadow ease;
+  margin-block: 1em;
 }
 
 article.tweet img {
@@ -55,4 +52,11 @@ article.tweet footer i {
 
 article.tweet footer i:hover {
   color: #d99c23;
+}
+
+@media only screen and (min-width: 1024px) {
+  article.tweet {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
 }

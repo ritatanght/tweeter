@@ -51,3 +51,14 @@ main {
   background-color: #c5cbe3;
   color: #ff0000;
 }
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  main {
+    margin-top: 150px;
+    margin-inline: 5%;
+  }
+}

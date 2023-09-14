@@ -1,5 +1,6 @@
 section.new-tweet {
   display: none;
+  margin-bottom: 1em;
 }
 
 section.new-tweet form {
