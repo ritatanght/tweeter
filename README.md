@@ -6,8 +6,7 @@ Tweeter is a simple, single-page Twitter clone that is built with HTML5, Sass, J
 
 - Mobile Design
 
-<img src="./docs/tweeter_mobile.png" width=48%/>
-<img src="./docs/tweeter_mobile2.png" width=48%/>
+<img src="./docs/tweeter_mobile.png" width='48%'/> <img src="./docs/tweeter_mobile2.png" width='48%'/>
 
 <br/>
 
