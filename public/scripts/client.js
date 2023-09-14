@@ -63,7 +63,7 @@ $(document).ready(() => {
   loadTweets();
 
   // form data submission
-  $("form").submit(function (event) {
+  $("form").submit(function(event) {
     event.preventDefault();
     // move out the error message div before each submission
     const $errorDiv = $("#error");
@@ -91,8 +91,8 @@ $(document).ready(() => {
     }
 
     $.post("/tweets", { text }, () => {
-      // once the tweets is successfully posted, clear the textarea
-      $(this).find("textarea").val("");
+      // once the tweets is successfully posted, clear the textarea and trigger a change event
+      $(this).find("textarea").val("").change();
       // empty the tweets-container and call loadTweets to fetch the tweets again
       $("#tweets-container").empty();
       loadTweets();
