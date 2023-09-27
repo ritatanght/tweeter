@@ -1,7 +1,7 @@
 // Display the remaining characters for the new tweet form
 // Render in RED with the invalid class when the textarea has more than 140 characters
 $("document").ready(function() {
-  $("textarea").on("keyup", function() {
+  $("textarea").on("input", function() {
     let remainingChar = 140 - this.value.length;
     const counter = $(this).parent().find(".counter");
 
