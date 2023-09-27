@@ -63,7 +63,7 @@ $(document).ready(() => {
   loadTweets();
 
   // form data submission
-  $("form").submit(function(event) {
+  $("form").submit(function (event) {
     event.preventDefault();
     // move out the error message div before each submission
     const $errorDiv = $("#error");
@@ -77,12 +77,12 @@ $(document).ready(() => {
 
     // disallow tweet content to be empty or exceeds 140 characters, show corresponding error message
     if (!text) {
-      $errorDiv.slideDown("fast", function() {
+      $errorDiv.slideDown("fast", function () {
         $(this).children("p").text("Your tweet is empty.");
       });
       return;
     } else if (text.length > 140) {
-      $errorDiv.slideDown("fast", function() {
+      $errorDiv.slideDown("fast", function () {
         $(this)
           .children("p")
           .text("Too long! Please keep it under 140 characters.");
@@ -93,9 +93,18 @@ $(document).ready(() => {
     $.post("/tweets", { text }, () => {
       // once the tweets is successfully posted, clear the textarea and trigger a change event
       $(this).find("textarea").val("").change();
-      // empty the tweets-container and call loadTweets to fetch the tweets again
-      $("#tweets-container").empty();
-      loadTweets();
+
+      /**
+       * Append only the tweet just posted to the begining of the tweets list
+       * renderTweets takes in an array, so wrapping it in an array is neccessary
+       * For this project we are not touching the backend, otherwise I would send the posted data from the backend
+       *      instead of fetching all the tweets and extracting only the latest tweet
+       */
+      const loadSubmittedTweet = () => {
+        $.get("/tweets", (tweets) => renderTweets([tweets[tweets.length - 1]]));
+      };
+
+      loadSubmittedTweet();
     });
   });
 });
