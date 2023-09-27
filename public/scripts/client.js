@@ -42,7 +42,6 @@ const createTweetElement = (tweetObject) => {
 const renderTweets = (tweets) => {
   // loops through tweets
   for (const tweet of tweets) {
-    // calls createTweetElement for each tweet
     const $tweet = createTweetElement(tweet);
     // takes return value and prepend it to the tweets container to make it as the first child
     $("#tweets-container").prepend($tweet);
@@ -56,16 +55,17 @@ $(document).ready(() => {
    * call renderTweets to render the tweets to the DOM
    */
   const loadTweets = () => {
-    $.get("/tweets", (tweets) => renderTweets(tweets));
+    $.get("/tweets", (tweets) => renderTweets(tweets)).catch((error) =>
+      console.log(error)
+    );
   };
 
-  // load and render all tweets
   loadTweets();
 
   // form data submission
   $("form").submit(function (event) {
     event.preventDefault();
-    // move out the error message div before each submission
+    // move up the error message div before each submission
     const $errorDiv = $("#error");
     $errorDiv.slideUp("fast");
 
@@ -103,8 +103,7 @@ $(document).ready(() => {
       const loadSubmittedTweet = () => {
         $.get("/tweets", (tweets) => renderTweets([tweets[tweets.length - 1]]));
       };
-
       loadSubmittedTweet();
-    });
+    }).catch((error) => console.log(error));
   });
 });
